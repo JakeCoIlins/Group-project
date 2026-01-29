@@ -11,8 +11,10 @@ public class KillFloor : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+           player.gameObject.GetComponent<CharacterController>().enabled = false;
             player.position = respawn_point.position;
-            player.position = new Vector3(2.302f, 1.421f, -4.342182f);
+            player.gameObject.GetComponent<CharacterController>().enabled = true;
+            
             Debug.Log("Restart level");
         }
     }
