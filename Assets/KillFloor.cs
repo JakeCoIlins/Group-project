@@ -9,6 +9,11 @@ public class KillFloor : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        player.transform.position = respawn_point.transform.position;
+        if (other.CompareTag("Player"))
+        {
+            player.position = respawn_point.position;
+            player.position = new Vector3(2.302f, 1.421f, -4.342182f);
+            Debug.Log("Restart level");
+        }
     }
 }
