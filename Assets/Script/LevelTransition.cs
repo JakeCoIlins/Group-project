@@ -4,9 +4,9 @@ using UnityEngine.SceneManagement;
 public class LevelTransition : MonoBehaviour
 {
     
-    public void LoadLevel2()
+    public void SampleScene()
     {
-        SceneManager.LoadScene("Level 2");
+        SceneManager.LoadScene("Sample Scene");
     }
 
   
@@ -15,7 +15,7 @@ public class LevelTransition : MonoBehaviour
         
         if (other.CompareTag("Player"))
         {
-            LoadLevel2();
+            SampleScene();
         }
     }
 }
