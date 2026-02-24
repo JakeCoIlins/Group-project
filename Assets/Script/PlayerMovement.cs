@@ -20,8 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isWallJumping = false;
     private float wallJumpTimer = 0f;
-    public float wallJumpDuration = 0.5f; 
-
+    public float wallJumpDuration = 0.5f;
+    private bool isJumping;
+    private bool isGrounded;
     void Start()
     {
         cc = GetComponent<CharacterController>();
