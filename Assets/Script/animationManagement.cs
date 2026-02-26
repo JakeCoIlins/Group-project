@@ -5,14 +5,24 @@ using UnityEngine;
 public class animationManagement : MonoBehaviour
 {
     Animator anim;
+
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    public void PlayJumpAnimation()
+    {
+        anim.Play("Jumping");
+    }
+
+    public void PlayLandingAnimation()
+    {
+        anim.Play("Landing");
+    }
     void Update()
     {
         anim.SetFloat("Blend", Input.GetAxis("Horizontal"));
     }
 }
+
