@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 using System.Collections;
-using System.Collections.Generic
+using System.Collections.Generic;
 
 using TMPro;
 using UnityEngine;
@@ -26,7 +26,7 @@ public class countdown : MonoBehaviour
         if(TimeLeft > 0) 
         {
             //time tick down
-            TimeLeft -=Time.delatTime
+            TimeLeft -= Time.delatTime
                 TimerText.text = Timeleft.ToString("0.00");
         }
         else

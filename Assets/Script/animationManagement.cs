@@ -5,10 +5,11 @@ using UnityEngine;
 public class animationManagement : MonoBehaviour
 {
     Animator anim;
-
+    CharacterController characterController;
     void Start()
     {
         anim = GetComponent<Animator>();
+        characterController = GetComponent<CharacterController>();
     }
 
     public void PlayJumpAnimation()
@@ -23,6 +24,15 @@ public class animationManagement : MonoBehaviour
     void Update()
     {
         anim.SetFloat("Blend", Input.GetAxis("Horizontal"));
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            PlayJumpAnimation();
+        }
+
+        if (characterController.isGrounded)
+        {
+            anim.Play("falling");
+        }
     }
 }
 
