@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 using TMPro;
-using UnityEngine;
+using UnityEngine;                                                                                                      
 using UnityEngine.UI;
 
 public class countdown : MonoBehaviour
@@ -31,7 +31,6 @@ public class countdown : MonoBehaviour
             //Timer Finished
             TimerText.gameObject.SetActive(true);
         }
-
     }
 }
  //https://www.youtube.com/watch?v=T0atxxGoOlE
