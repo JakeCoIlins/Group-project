@@ -12,31 +12,25 @@ public class countdown : MonoBehaviour
     private float TimeLeft;
 
     public TMP_Text TimerText;
-    
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
+        void Start()
+        {
+        TimeLeft = StartTime;
+           
+        }
     // Update is called once per frame
     void Update()
     {
         if(TimeLeft > 0) 
         {
             //time tick down
-            TimeLeft -= Time.delatTime
-                TimerText.text = Timeleft.ToString("0.00");
+            TimeLeft -= Time.deltaTime;
+                TimerText.text = TimeLeft.ToString("0.00");
         }
         else
         {
             //Timer Finished
         }
-        PublicAPIAttribute void Start()
-        {
-        TimeLeft = StartTime;
-            //https://www.youtube.com/watch?v=T0atxxGoOlE
-        }
+
     }
 }
+ //https://www.youtube.com/watch?v=T0atxxGoOlE
