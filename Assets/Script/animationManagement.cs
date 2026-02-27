@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class animationManagement : MonoBehaviour
 {
+    bool isJumping = false;
     Animator anim;
     CharacterController characterController;
     void Start()
@@ -14,7 +16,7 @@ public class animationManagement : MonoBehaviour
 
     public void PlayJumpAnimation()
     {
-        anim.Play("Jumping");
+        anim.Play("Jump");
     }
 
     public void PlayLandingAnimation()
@@ -24,15 +26,28 @@ public class animationManagement : MonoBehaviour
     void Update()
     {
         anim.SetFloat("Blend", Input.GetAxis("Horizontal"));
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             PlayJumpAnimation();
+            isJumping = true;
         }
 
-        if (characterController.isGrounded)
+        if (characterController.isGrounded && isJumping)
         {
             anim.Play("falling");
+            isJumping = false;
         }
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+            transform.localScale = new Vector3(1, 1, -1);
+        }
+        else if (Input.GetAxis("Horizontal") > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+
+
+
     }
 }
 
