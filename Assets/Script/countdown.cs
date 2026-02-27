@@ -15,7 +15,7 @@ public class countdown : MonoBehaviour
         void Start()
         {
         TimeLeft = StartTime;
-           
+        TimerText.gameObject.SetActive(true);
         }
     // Update is called once per frame
     void Update()
@@ -24,11 +24,12 @@ public class countdown : MonoBehaviour
         {
             //time tick down
             TimeLeft -= Time.deltaTime;
-                TimerText.text = TimeLeft.ToString("0.00");
+            TimerText.text = TimeLeft.ToString("0.00");
         }
         else
         {
             //Timer Finished
+            TimerText.gameObject.SetActive(true);
         }
 
     }
