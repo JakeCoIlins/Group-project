@@ -3,10 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelTransition : MonoBehaviour
 {
-    
-    public void SampleScene()
+    [SerializeField] int scenetoload = 0;
+    public void Level1()
     {
-        SceneManager.LoadScene("Sample Scene");
+        SceneManager.LoadScene(SceneManager.GetSceneAt(scenetoload).name);
     }
 
   
@@ -15,7 +15,7 @@ public class LevelTransition : MonoBehaviour
         
         if (other.CompareTag("Player"))
         {
-            SampleScene();
+            Level1();
         }
     }
 }
