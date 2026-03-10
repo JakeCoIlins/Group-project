@@ -1562,7 +1562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c46b6e954dd8b458273c47fb15c51b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelTransition
-  scenetoload: 1
+  scenetoload: 0
 --- !u!1 &605489308
 GameObject:
   m_ObjectHideFlags: 0
