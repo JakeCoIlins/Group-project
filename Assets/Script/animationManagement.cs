@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class animationManagement : MonoBehaviour
 {
     bool isJumping = false;
+    bool isHanging = false; 
     Animator anim;
     CharacterController characterController;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -23,9 +24,11 @@ public class animationManagement : MonoBehaviour
     {
         anim.Play("Landing");
     }
+
     void Update()
     {
         anim.SetFloat("Blend", Input.GetAxis("Horizontal"));
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             PlayJumpAnimation();
@@ -37,6 +40,7 @@ public class animationManagement : MonoBehaviour
             anim.Play("falling");
             isJumping = false;
         }
+
         if (Input.GetAxis("Horizontal") < 0)
         {
             transform.localScale = new Vector3(1, 1, -1);
@@ -46,8 +50,27 @@ public class animationManagement : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
         }
 
+        
+        if (isHanging)
+        {
+            anim.Play("Hanging");
+        }
+    }
 
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isHanging = true;
+        }
+    }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isHanging = false;
+        }
     }
 }
-
