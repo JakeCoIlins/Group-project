@@ -4,9 +4,13 @@ using UnityEngine.SceneManagement;
 public class LevelTransition : MonoBehaviour
 {
     [SerializeField] int scenetoload = 0;
+    [SerializeField] public Scene targetscene;
+    [SerializeField] public string scenename;
+
     public void Level1()
     {
-        SceneManager.LoadScene(SceneManager.GetSceneAt(scenetoload).name);
+        Debug.Log("level loaded");
+        SceneManager.LoadScene(scenename);
     }
 
   
