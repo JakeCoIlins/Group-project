@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class CoinCollection : MonoBehaviour
 {
@@ -9,16 +7,32 @@ public class CoinCollection : MonoBehaviour
 
     public TextMeshProUGUI CoinText;
 
+    private void Start()
+    {
+        
+        UpdateCoinText();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.transform.tag == "Coin")
+        if (other.CompareTag("Coin"))
         {
             Coin++;
-            CoinText.text = "Coin: " + Coin.ToString();
-            Debug.Log(Coin);
+            UpdateCoinText();
+            Debug.Log("Coins collected: " + Coin);
             Destroy(other.gameObject);
         }
     }
 
-
+    private void UpdateCoinText()
+    {
+        if (CoinText != null)
+        {
+            CoinText.text = "Coin: " + Coin.ToString();
+        }
+        else
+        {
+            Debug.LogWarning("CoinText is not assigned in the inspector.");
+        }
+    }
 }
