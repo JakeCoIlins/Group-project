@@ -395,7 +395,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Smoothness",
     "m_StageCapability": 2,
-    "m_Value": 4.300000190734863,
+    "m_Value": 6.119999885559082,
     "m_DefaultValue": 0.5,
     "m_Labels": [],
     "m_LiteralMode": false
@@ -605,9 +605,9 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "r": 0.8207547068595886,
-        "g": 0.06581524759531021,
-        "b": 0.06581524759531021,
+        "r": 0.13880681991577149,
+        "g": 0.8196078538894653,
+        "b": 0.06666667014360428,
         "a": 1.0
     },
     "isMainColor": false,
@@ -784,10 +784,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1114.0,
-            "y": -621.9999389648438,
+            "x": -1149.0,
+            "y": -622.0,
             "width": 208.0,
-            "height": 336.0
+            "height": 335.9999694824219
         }
     },
     "m_Slots": [
@@ -2026,9 +2026,9 @@
     "m_ShaderOutputName": "BaseColor",
     "m_StageCapability": 2,
     "m_Value": {
-        "x": 0.5,
-        "y": 0.5,
-        "z": 0.5
+        "x": 0.04313726723194122,
+        "y": 0.6745098233222961,
+        "z": 0.047730978578329089
     },
     "m_DefaultValue": {
         "x": 0.5,
@@ -2139,7 +2139,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Power",
     "m_StageCapability": 3,
-    "m_Value": 1.0199999809265137,
+    "m_Value": 1.100000023841858,
     "m_DefaultValue": 1.0,
     "m_Labels": [],
     "m_LiteralMode": false
